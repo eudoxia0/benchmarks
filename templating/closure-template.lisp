@@ -1,6 +1,4 @@
-(ql:quickload :closure-template)
-
-(declaim (optimize (speed 3) (debug 0)))
+(in-package :benchmarks)
 
 (defparameter +template+ "
 {namespace template}
@@ -15,8 +13,4 @@
 
 (closure-template:compile-template :common-lisp-backend +template+)
 
-(let ((start (get-internal-real-time)))
-  (template:main (list :list +list+))
-  (format t "cl-closure-template: ~6$~&"
-          (/ (- (get-internal-real-time) start)
-             internal-time-units-per-second)))
+(benchmark "cl-closure-template" (template:main (list :list +list+)))

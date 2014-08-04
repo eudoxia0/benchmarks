@@ -1,13 +1,4 @@
-(declaim (optimize (speed 3) (debug 0)))
-
-(ql:quickload :cl-markup)
-
-(defparameter +list+ (loop for i from 0 to 10000 collecting i))
-(defparameter +dict+ (let ((table (make-hash-table)))
-                       (loop for item in +list+ do
-                         (setf (gethash item table) item))
-                       table))
-
+(in-package :benchmarks)
 (setf markup:*output-stream* (make-string-output-stream))
 
 (defun template ()
@@ -24,8 +15,4 @@
 
 (compile 'template)
 
-(let ((start (get-internal-real-time)))
-  (template)
-  (format t "cl-markup: ~6$~&"
-          (/ (- (get-internal-real-time) start)
-             internal-time-units-per-second)))
+(benchmark "cl-markup" (template))
