@@ -4,7 +4,8 @@
   :license "MIT"
   :depends-on (:cl-emb
                :cl-markup
-               :cl-who)
+               :cl-who
+               :djula)
   :serial t
   :components ((:file "package")
                (:module "templating"
