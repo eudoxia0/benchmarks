@@ -1,4 +1,4 @@
-(in-package :benchmarks)
+(ql:quickload :cl-who)
 
 (defparameter *stream* (make-string-output-stream))
 

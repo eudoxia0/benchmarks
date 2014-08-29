@@ -1,4 +1,5 @@
-(in-package :benchmarks)
+(ql:quickload :cl-markup)
+
 (setf markup:*output-stream* (make-string-output-stream))
 
 (defun template ()

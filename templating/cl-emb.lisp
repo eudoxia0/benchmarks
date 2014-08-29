@@ -1,4 +1,4 @@
-(in-package :benchmarks)
+(ql:quickload :cl-emb)
 
 (defparameter +template+ "
 List:

@@ -1,4 +1,4 @@
-(in-package :benchmarks)
+(ql:quickload :closure-template)
 
 (defparameter +template+ "
 {namespace template}

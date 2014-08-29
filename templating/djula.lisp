@@ -1,7 +1,7 @@
-(in-package :benchmarks)
+(ql:quickload :djula)
 
 (djula:add-template-directory
- (asdf:system-relative-pathname :benchmarks #p"templating/templates/"))
+ #p"templating/templates/")
 
 (defparameter +template+ (djula:compile-template* "djula.html"))
 
