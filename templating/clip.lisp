@@ -1,6 +1,6 @@
 (ql:quickload :clip)
 
-(defparameter +template+ "<ol iterate=\":list\">
+(defparameter +template+ "<ol iterate=\"list\">
  <li lquery=\"(text (write-to-string *))\"></li>
 </ol>")
 
