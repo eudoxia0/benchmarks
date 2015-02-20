@@ -6,7 +6,7 @@ TEMPLATING = $(SBCL) --quit $(TMPL_COMMON) --load
 SERVER = $(SBCL) --load
 BENCHMARK = wrk -t10 -c10 -d60s http://127.0.0.1:8000/ > results.txt
 
-REDIRECT = > /dev/null 2>&1
+REDIRECT =
 
 default: all
 .PHONY: templating server
