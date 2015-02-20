@@ -1,6 +1,6 @@
 (ql:quickload :eco)
 
-(defparameter +template+ "<% deftemplate test (list) %>
+(defparameter +template+ "<% deftemplate test (list) () %>
 List:
 <ol>
   <% loop for item in list do %>
