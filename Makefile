@@ -23,8 +23,9 @@ templating:
 	python templating/jinja2-template.py $(REDIRECT)
 
 server:
-	$(SBCL) server/raw-clack.lisp $(REDIRECT)
-	$(BENCHMARK)
+	$(SBCL) server/raw-clack.lisp $(REDIRECT) &
+	sleep 5
+	#$(BENCHMARK)
 
 all: templating server
 	cat results.txt
